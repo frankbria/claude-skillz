@@ -759,7 +759,7 @@ def main():
     # Execute
     if sandbox_repo:
         # Sandbox mode: docker sandbox run claude <repo> -- <flags>
-        cmd = ["docker", "sandbox", "run", "claude", sandbox_repo, "--"] + claude_flags
+        cmd = ["docker", "sandbox", "run", "--pull-template", "always", "claude", sandbox_repo, "--"] + claude_flags
     else:
         # Direct mode: claude <flags>
         claude_cmd = find_claude_cmd()
